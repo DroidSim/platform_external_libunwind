@@ -216,8 +216,12 @@ libunwind_src_files += \
 	src/unwind/SetGR.c \
 	src/unwind/SetIP.c \
 
+ifeq ($(TARGET_OS),gnu_linux)
+libunwind_ldlibs_target := -ldl
+else
 libunwind_shared_libraries_target := \
 	libdl \
+endif
 
 libunwind_ldflags_host := \
 	-nostdlib
