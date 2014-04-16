@@ -217,7 +217,7 @@ libunwind_src_files += \
 	src/unwind/SetIP.c \
 
 ifeq ($(TARGET_OS),gnu_linux)
-libunwind_ldlibs_target := -ldl
+libunwind_ldlibs_target := -ldl -lpthread
 else
 libunwind_shared_libraries_target := \
 	libdl \
