@@ -218,9 +218,6 @@ libunwind_src_files += \
 
 ifeq ($(TARGET_OS),gnu_linux)
 libunwind_ldlibs_target := -ldl -lpthread
-else
-libunwind_shared_libraries_target := \
-	libdl \
 endif
 
 libunwind_ldflags_host := \
@@ -229,8 +226,6 @@ libunwind_ldflags_host := \
 libunwind_ldlibs_host := \
 	-lc \
 	-lpthread \
-
-endif
 
 ifeq ($(debug),true)
 libunwind_shared_libraries += \
