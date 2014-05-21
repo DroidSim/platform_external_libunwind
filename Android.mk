@@ -229,6 +229,7 @@ libunwind_ldflags_host := \
 libunwind_ldlibs_host := \
 	-lc \
 	-lpthread \
+endif
 
 ifeq ($(debug),true)
 libunwind_shared_libraries += \
